@@ -16,19 +16,20 @@ public class PlayerMovement : MonoBehaviour, IMovementValue
     [Range(0,1f)]
     [SerializeField] private float _enduranceTresholdPercentage = .5f;
 
+    private Vector3 _smoothVelocity;
+
     [ShowNonSerializedField] private float _currentSpeed;
     [ShowNonSerializedField] private float _currentEndurance;
 
     [ShowNonSerializedField] private bool _isSprinting;
     [ShowNonSerializedField] private bool _sprintOnCooldown;
 
-    [ShowNonSerializedField] private Vector3 _smoothVelocity;
-
     [ShowNativeProperty] public Vector3 MovementDirection { get; private set; }
     [ShowNativeProperty] public Vector3 AirDirection { get; private set; }
 
-    [ShowNativeProperty] public Vector3 Velocity { get; private set; }
+    [ShowNativeProperty] public Vector3 AirDirectionTransformed { get; private set; }
 
+    [ShowNativeProperty] public Vector3 Velocity { get; private set; }
     [ShowNativeProperty] public Vector3 Value { get; private set; }
 
     private InputReader _input;
@@ -71,6 +72,8 @@ public class PlayerMovement : MonoBehaviour, IMovementValue
         if (_groundCheck.GetGrounded())
         {
             MovementDirection = inputDirection;
+            MovementDirection = transform.TransformDirection(MovementDirection);
+            
             AirDirection = Vector3.zero;
 
             _currentSpeed = Mathf.MoveTowards(_currentSpeed, targetSpeed, _acceleration * Time.deltaTime);
@@ -80,11 +83,13 @@ public class PlayerMovement : MonoBehaviour, IMovementValue
             if (inputDirection != Vector3.zero)
             {
                 AirDirection += inputDirection;
+
             }
         }
 
-        Vector3 finalDirection = (MovementDirection + AirDirection).normalized * _currentSpeed;
-        finalDirection = transform.TransformDirection(finalDirection);
+        AirDirectionTransformed = transform.TransformDirection(AirDirection);
+
+        Vector3 finalDirection = (MovementDirection + AirDirectionTransformed).normalized * _currentSpeed;
 
         if (finalDirection != Vector3.zero)
         {

@@ -55,6 +55,7 @@ public class PlayerGravity : GravityBase, IMovementValue
         {
             if (_isLanded)
             {
+                _currentGravityVelocity = -.5f;
                 _isLanded = false;
             }
 

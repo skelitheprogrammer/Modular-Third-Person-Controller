@@ -5,7 +5,6 @@ public class PlayerSliding : MonoBehaviour, IMovementValue
 {
     [SerializeField] private float _slideSpeed;
     [SerializeField] private float _accelerationSpeed;
-    [SerializeField] private float _pullGravity;
 
     [ShowNonSerializedField] private float _currentSlideSpeed;
     [ShowNonSerializedField] private float _targetSlideSpeed;
@@ -16,9 +15,11 @@ public class PlayerSliding : MonoBehaviour, IMovementValue
 
     private IMovementHandler _handler;
     private SlideCheck _slideChecker;
+    private GravityBase _gravity;
 
     private void Awake()
     {
+        _gravity = GetComponent<GravityBase>();
         _handler = GetComponent<IMovementHandler>();
         _slideChecker = GetComponent<SlideCheck>();
     }
@@ -50,7 +51,8 @@ public class PlayerSliding : MonoBehaviour, IMovementValue
             _targetSlideSpeed = _slideSpeed;
 
             _slideMovement *= _currentSlideSpeed;
-            _slideMovement.y -= _pullGravity;
+            _slideMovement.y -= _gravity.Gravity * Time.deltaTime;
+
         }
         else
         {
