@@ -126,7 +126,7 @@ public class PlayerMovement : MonoBehaviour, IMovementValue
 
         if (Velocity != Vector3.zero)
         {
-            if (_input.SprintPressed && _currentEndurance >= 0f && !_sprintOnCooldown)
+            if (_input.IsSprintPressed && _currentEndurance >= 0f && !_sprintOnCooldown)
             {
                 _isSprinting = true;
 

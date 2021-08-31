@@ -2,25 +2,29 @@
 
 public class StateMachineBehaviour : MonoBehaviour
 {
-    [SerializeField] private State _initState;
-
-    public StateMachine StateMachine { get; private set; }
-
     public string currentStateName;
 
-    private void Awake()
-    {
-        StateMachine = new StateMachine(_initState);
-    }
+    [SerializeField] private State _initState;
 
-    private void OnEnable()
+    private StateMachine _stateMachine;
+    private StateMachine StateMachine
     {
-        StateMachine.ChangeState(_initState);
+        get
+        {
+            if (_stateMachine != null) 
+            { 
+                return _stateMachine; 
+            }
+
+            _stateMachine = new StateMachine(_initState);
+            
+            return _stateMachine;
+        }
     }
 
     private void Update()
     {
         StateMachine.Tick();
-        currentStateName = StateMachine.CurrentState.name;
+        currentStateName = StateMachine.CurrentState.ToString();
     }
 }

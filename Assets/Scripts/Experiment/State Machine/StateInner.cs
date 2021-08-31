@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 [System.Serializable]
-public class State : MonoBehaviour, IState
+public class StateInner : IState
 {
 #if UNITY_EDITOR
     [SerializeField] private string _stateName;
@@ -18,7 +18,7 @@ public class State : MonoBehaviour, IState
         {
             if (item.ShouldTransition())
             {
-                return item.NextState;
+                return (IState)item.NextState;
             }
         }
 

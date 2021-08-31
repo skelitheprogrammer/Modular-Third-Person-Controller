@@ -8,7 +8,7 @@ public class InputReader : MonoBehaviour
     [ShowNativeProperty] public Vector2 MoveInput { get; private set; }
     [ShowNativeProperty] public Vector2 RotateInput { get; private set; }
     [ShowNativeProperty] public bool IsJumpPressed { get; private set; }
-    [ShowNativeProperty] public bool SprintPressed { get; private set; }
+    [ShowNativeProperty] public bool IsSprintPressed { get; private set; }
     [ShowNativeProperty] public bool SlidePressed { get; private set; }
     [ShowNativeProperty] public bool CrouchPressed { get; private set; }
     [ShowNativeProperty] public bool ClimbPressed { get; private set; }
@@ -25,8 +25,8 @@ public class InputReader : MonoBehaviour
 
     public void OnJump(InputAction.CallbackContext ctx)
     {
-        //IsJumpPressed = ctx.started;
-        if (ctx.performed)
+        IsJumpPressed = ctx.started;
+/*        if (ctx.performed)
         {
             IsJumpPressed = true;
         }
@@ -34,7 +34,7 @@ public class InputReader : MonoBehaviour
         if (ctx.canceled)
         {
             IsJumpPressed = false;
-        }
+        }*/
     }
 
     public void OnSlide(InputAction.CallbackContext ctx) 
@@ -54,12 +54,12 @@ public class InputReader : MonoBehaviour
     {
         if (ctx.performed)
         {
-            SprintPressed = true;
+            IsSprintPressed = true;
         }
 
         if (ctx.canceled)
         {
-            SprintPressed = false;
+            IsSprintPressed = false;
         }
     }
 

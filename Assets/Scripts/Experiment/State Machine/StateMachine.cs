@@ -1,15 +1,15 @@
-﻿public class StateMachine
+public class StateMachine
 {
-    public State CurrentState { get; private set; }
+    public IState CurrentState { get; private set; }
 
-    public StateMachine(State currentState)
+    public StateMachine(IState initState)
     {
-        CurrentState = currentState;
+        ChangeState(initState);
     }
 
     public void Tick()
     {
-        State nextState = CurrentState.ProcessTransitions();
+        IState nextState = CurrentState?.ProcessTransitions();
 
         if (nextState != null)
         {
@@ -17,12 +17,13 @@
         }
     }
 
-    public void ChangeState(State newState)
+    public void ChangeState(IState newState)
     {
-        CurrentState.Logic?.Exit();
+
+        CurrentState?.Logic?.Exit();
 
         CurrentState = newState;
 
-        CurrentState.Logic?.Enter();
+        CurrentState?.Logic?.Enter();
     }
 }

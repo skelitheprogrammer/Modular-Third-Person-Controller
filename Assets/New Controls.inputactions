@@ -27,7 +27,7 @@
                     "id": "a013063e-08c3-4741-8b37-92847db8b643",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "Tap"
                 },
                 {
                     "name": "Sprint",

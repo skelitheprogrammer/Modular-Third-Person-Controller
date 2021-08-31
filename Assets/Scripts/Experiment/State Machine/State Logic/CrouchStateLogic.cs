@@ -1,16 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class CrouchStateLogic : StateLogic
+﻿public class CrouchStateLogic : StateLogic
 {
+    [UnityEngine.SerializeField] private PlayerJumping _jumping;
+
     public override void Enter()
     {
-        Debug.Log("yay");
+        _jumping.enabled = false;
     }
 
     public override void Exit()
     {
-        Debug.Log(":(");
+        _jumping.enabled = true;
     }
 }

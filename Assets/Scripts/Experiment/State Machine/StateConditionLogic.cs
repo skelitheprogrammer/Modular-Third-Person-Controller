@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 
-public abstract class ConditionLogic : MonoBehaviour
+public abstract class StateConditionLogic : MonoBehaviour
 {
-
     public abstract bool IsMet();
 }

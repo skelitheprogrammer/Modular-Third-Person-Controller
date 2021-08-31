@@ -1,13 +1,8 @@
 using UnityEngine;
 
-public class IsGroundedCondition : ConditionLogic
+public class IsGroundedCondition : StateConditionLogic
 {
     [SerializeField] private GroundCheckerBase _groundChecker;
-
-    private void Awake()
-    {
-        _groundChecker = GetComponentInParent<GroundCheckerBase>();
-    }
 
     public override bool IsMet()
     {

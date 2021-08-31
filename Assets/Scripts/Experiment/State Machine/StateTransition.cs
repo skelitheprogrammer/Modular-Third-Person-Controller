@@ -3,7 +3,9 @@
 [System.Serializable]
 public class StateTransition
 {
-    [SerializeField] private string _nextStateName = "Next state name";
+#if UNITY_EDITOR
+    [SerializeField] private string _transitionName;
+#endif
 
     [SerializeField] private State _nextState;
     public State NextState => _nextState;
@@ -12,9 +14,9 @@ public class StateTransition
 
     public bool ShouldTransition()
     {
-        foreach(var item in _conditions)
+        foreach (var item in _conditions)
         {
-            if (item.ShouldBe != item.Logic.IsMet())
+            if (item.ConditionLogic.IsMet() != item.ShouldBe)
             {
                 return false;
             }
@@ -22,5 +24,5 @@ public class StateTransition
 
         return true;
     }
-    
+
 }
