@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class PlayerRotation : MonoBehaviour
+public class PlayerRotation : MonoBehaviour, IModule
 {
     [SerializeField] private Transform _origin;
 
@@ -9,7 +9,29 @@ public class PlayerRotation : MonoBehaviour
 
     private float _rotationVelocity;
 
-    private void Update()
+    private IModuleHandler _moduleHandler;
+
+    private void Awake()
+    {
+        _moduleHandler = GetComponent<IModuleHandler>();
+    }
+
+    private void OnEnable()
+    {
+        _moduleHandler.Subscribe(this);
+    }
+
+    private void OnDisable()
+    {
+        _moduleHandler.UnSubscribe(this);
+    }
+
+    /*private void Update()
+    {
+        Rotate();
+    }*/
+
+    public void OnUpdateModule()
     {
         Rotate();
     }
@@ -20,4 +42,6 @@ public class PlayerRotation : MonoBehaviour
 
         transform.rotation = Quaternion.Euler(0.0f, rotation, 0.0f);
     }
+
+
 }

@@ -1,7 +1,7 @@
 using NaughtyAttributes;
 using UnityEngine;
 
-public class PlayerGravity : GravityBase, IMovementValue
+public class PlayerGravity : GravityBase, IMovementValue, IModule
 {
     [SerializeField] private float _groundGravity = -7;
     public float GroundGravity => _groundGravity;
@@ -16,6 +16,7 @@ public class PlayerGravity : GravityBase, IMovementValue
     private bool _isLanded;
 
     private IMovementHandler _handler;
+    private IModuleHandler _moduleHandler;
     private GroundCheckerBase _groundCheck;
 
     [ShowNativeProperty] public Vector3 Value { get; private set; }
@@ -23,20 +24,23 @@ public class PlayerGravity : GravityBase, IMovementValue
     private void Awake()
     {
         _handler = GetComponent<IMovementHandler>();
+        _moduleHandler = GetComponent<IModuleHandler>();
         _groundCheck = GetComponent<GroundCheckerBase>();
     }
 
     private void OnEnable()
     {
+        _moduleHandler.Subscribe(this);
         _handler.Subscribe(this);
     }
 
     private void OnDisable()
     {
+        _moduleHandler.UnSubscribe(this);
         _handler.UnSubscribe(this);
     }
 
-    private void Update()
+    public void OnUpdateModule()
     {
         ApplyGravity();
     }

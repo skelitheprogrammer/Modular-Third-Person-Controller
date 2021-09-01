@@ -1,7 +1,7 @@
 using NaughtyAttributes;
 using UnityEngine;
 
-public class PlayerSliding : MonoBehaviour, IMovementValue
+public class PlayerSliding : MonoBehaviour, IMovementValue, IModule
 {
     [SerializeField] private float _slideSpeed;
     [SerializeField] private float _accelerationSpeed;
@@ -14,6 +14,8 @@ public class PlayerSliding : MonoBehaviour, IMovementValue
     public Vector3 Value { get; private set; }
 
     private IMovementHandler _handler;
+    private IModuleHandler _moduleHandler;
+
     private SlideCheck _slideChecker;
     private GravityBase _gravity;
 
@@ -22,31 +24,35 @@ public class PlayerSliding : MonoBehaviour, IMovementValue
         _gravity = GetComponent<GravityBase>();
         _handler = GetComponent<IMovementHandler>();
         _slideChecker = GetComponent<SlideCheck>();
+        _moduleHandler = GetComponent<IModuleHandler>();
     }
 
     private void OnEnable()
     {
+        _moduleHandler.Subscribe(this);
         _handler.Subscribe(this);
     }
+
     private void OnDisable()
     {
+        _moduleHandler.UnSubscribe(this);
         _handler.UnSubscribe(this);
     }
 
-    private void Update()
+    public void OnUpdateModule()
     {
         SlopeSlide();
     }
 
     private void SlopeSlide()
     {
-        Vector3 normal = _slideChecker.HitNormal;
-
-        Vector3 movement = new Vector3(normal.x, -normal.y, normal.z);
-        Vector3.OrthoNormalize(ref normal, ref movement);
-
         if (_slideChecker.IsSliding)
         {
+            Vector3 normal = _slideChecker.HitNormal;
+
+            Vector3 movement = new Vector3(normal.x, -normal.y, normal.z);
+            Vector3.OrthoNormalize(ref normal, ref movement);
+
             _slideMovement = movement;
             _targetSlideSpeed = _slideSpeed;
 
@@ -64,8 +70,8 @@ public class PlayerSliding : MonoBehaviour, IMovementValue
 
         _currentSlideSpeed = Mathf.MoveTowards(_currentSlideSpeed, _targetSlideSpeed, _accelerationSpeed * Time.deltaTime);
 
-        Vector3 final = _slideMovement;
-
-        Value = final;
+        Value = _slideMovement;
     }
+
+
 }

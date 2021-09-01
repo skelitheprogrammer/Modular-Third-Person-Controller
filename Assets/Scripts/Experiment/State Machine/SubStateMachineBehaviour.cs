@@ -3,10 +3,6 @@ using UnityEngine;
 
 public class SubStateMachineBehaviour : State
 {
-#if UNITY_EDITOR
-    [SerializeField] private string _currentStateName;
-#endif
-
     [HorizontalLine(color: EColor.Gray)]
     [SerializeField] private StateInner _innerState;
 
@@ -39,13 +35,6 @@ public class SubStateMachineBehaviour : State
     private void Update()
     {
         StateMachine.Tick();
-
-#if UNITY_EDITOR
-        if (StateMachine.CurrentState != null)
-        {
-            _currentStateName = StateMachine.CurrentState.ToString();
-        }
-#endif
     }
 
 }

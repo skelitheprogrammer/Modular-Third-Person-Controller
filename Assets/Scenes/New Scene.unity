@@ -1305,29 +1305,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!1 &377215299 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5111174842942027756, guid: 01e4bd875a4788f45b4e59879edcbc4a, type: 3}
-  m_PrefabInstance: {fileID: 5111174843659982592}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &377215300
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 377215299}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2fb3e80bfc79574dbbc6d63430eaf93, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _animator: {fileID: 821016102}
-  _forwardHash: 673977882
-  _sideHash: -2085374837
-  _jumpHash: 1749078233
-  _sprintHash: 0
-  _inAirHash: 861170204
 --- !u!1 &403061461
 GameObject:
   m_ObjectHideFlags: 0
@@ -1421,7 +1398,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: -45, z: 0}
 --- !u!1 &480430145
 GameObject:
@@ -2036,37 +2013,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: -45, z: 0}
---- !u!1 &719265017 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5538174466399117466, guid: 01e4bd875a4788f45b4e59879edcbc4a, type: 3}
-  m_PrefabInstance: {fileID: 5111174843659982592}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &719265019
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 719265017}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04d035b8598046e4b9c4bd882c2cb1c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _stateName: Air Sub State Machine
-  _transitions:
-  - _transitionName: Ground State
-    _nextState: {fileID: 1925733826}
-    _conditions:
-    - _conditionName: Is grounded true
-      _shouldBe: 1
-      _logic: {fileID: 1282054800}
-  _logic: {fileID: 5111174843659982593}
-  _currentStateName: 
-  _innerState:
-    _stateName: Air State
-    _transitions: []
-    _logic: {fileID: 0}
 --- !u!1 &813694689
 GameObject:
   m_ObjectHideFlags: 0
@@ -2162,11 +2108,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &821016102 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 1694514378650996965, guid: 01e4bd875a4788f45b4e59879edcbc4a, type: 3}
-  m_PrefabInstance: {fileID: 5111174843659982592}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1000899067
 GameObject:
   m_ObjectHideFlags: 0
@@ -3346,17 +3287,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &1267545128 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5856627804973124696, guid: 01e4bd875a4788f45b4e59879edcbc4a, type: 3}
-  m_PrefabInstance: {fileID: 5111174843659982592}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61bbbc43f9544ab48b88051095dedbe3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!43 &1276654906
 Mesh:
   m_ObjectHideFlags: 0
@@ -3521,17 +3451,6 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!114 &1282054800 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1087790068231521148, guid: 01e4bd875a4788f45b4e59879edcbc4a, type: 3}
-  m_PrefabInstance: {fileID: 5111174843659982592}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cab24adcffde06744889831c32dc17cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!43 &1292718707
 Mesh:
   m_ObjectHideFlags: 0
@@ -3953,7 +3872,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 24
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: -45, z: 0}
 --- !u!1 &1384108533
 GameObject:
@@ -4806,56 +4725,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1925733825 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 922485632943914762, guid: 01e4bd875a4788f45b4e59879edcbc4a, type: 3}
-  m_PrefabInstance: {fileID: 5111174843659982592}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1925733826
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1925733825}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04d035b8598046e4b9c4bd882c2cb1c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _stateName: Ground SubState Machine
-  _transitions:
-  - _transitionName: Air State
-    _nextState: {fileID: 719265019}
-    _conditions:
-    - _conditionName: Is grounded false
-      _shouldBe: 0
-      _logic: {fileID: 1282054800}
-  _logic: {fileID: 1925733828}
-  _currentStateName: 
-  _innerState:
-    _stateName: Ground State
-    _transitions:
-    - _transitionName: Walking State
-      _nextState: {fileID: 1267545128}
-      _conditions:
-      - _conditionName: Is grounded true
-        _shouldBe: 1
-        _logic: {fileID: 1282054800}
-    _logic: {fileID: 0}
---- !u!114 &1925733828
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1925733825}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c316bf9431efde249b3ed6ce1db60695, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _behaviour: {fileID: 1925733826}
 --- !u!1 &1947071298
 GameObject:
   m_ObjectHideFlags: 0
@@ -6144,34 +6013,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 257407820, guid: 01e4bd875a4788f45b4e59879edcbc4a, type: 3}
-      propertyPath: _jumpTimeout
-      value: 0.15
-      objectReference: {fileID: 0}
-    - target: {fileID: 1694514378650996965, guid: 01e4bd875a4788f45b4e59879edcbc4a, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1694514378650996965, guid: 01e4bd875a4788f45b4e59879edcbc4a, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: be2e6c3d7984d0746bacbaf2c15f3299, type: 2}
-    - target: {fileID: 1737189892327210477, guid: 01e4bd875a4788f45b4e59879edcbc4a, type: 3}
-      propertyPath: _transitions.Array.data[0]._nextState
-      value: 
-      objectReference: {fileID: 1925733826}
-    - target: {fileID: 1737189892327210477, guid: 01e4bd875a4788f45b4e59879edcbc4a, type: 3}
-      propertyPath: _transitions.Array.data[1]._nextState
-      value: 
-      objectReference: {fileID: 719265019}
-    - target: {fileID: 1737189892327210477, guid: 01e4bd875a4788f45b4e59879edcbc4a, type: 3}
-      propertyPath: _transitions.Array.data[0]._nextState._underlyingValue
-      value: 
-      objectReference: {fileID: 1925733826}
-    - target: {fileID: 1737189892327210477, guid: 01e4bd875a4788f45b4e59879edcbc4a, type: 3}
-      propertyPath: _transitions.Array.data[1]._nextState._underlyingValue
-      value: 
-      objectReference: {fileID: 719265019}
     - target: {fileID: 5111174842942027756, guid: 01e4bd875a4788f45b4e59879edcbc4a, type: 3}
       propertyPath: m_Name
       value: Player
@@ -6220,38 +6061,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8057456901613207129, guid: 01e4bd875a4788f45b4e59879edcbc4a, type: 3}
-      propertyPath: _behaviour
-      value: 
-      objectReference: {fileID: 719265019}
-    - target: {fileID: 8680265966540963743, guid: 01e4bd875a4788f45b4e59879edcbc4a, type: 3}
-      propertyPath: _initState._underlyingValue
-      value: 
-      objectReference: {fileID: 5111174843659982594}
+    - target: {fileID: 5111174843659982594, guid: 01e4bd875a4788f45b4e59879edcbc4a, type: 3}
+      propertyPath: _crouchSpeedDecreaser
+      value: 0.8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 01e4bd875a4788f45b4e59879edcbc4a, type: 3}
---- !u!114 &5111174843659982593 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8057456901613207129, guid: 01e4bd875a4788f45b4e59879edcbc4a, type: 3}
-  m_PrefabInstance: {fileID: 5111174843659982592}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 719265017}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c316bf9431efde249b3ed6ce1db60695, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &5111174843659982594 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1737189892327210477, guid: 01e4bd875a4788f45b4e59879edcbc4a, type: 3}
-  m_PrefabInstance: {fileID: 5111174843659982592}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61bbbc43f9544ab48b88051095dedbe3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &6657865180660747154
 PrefabInstance:
   m_ObjectHideFlags: 0

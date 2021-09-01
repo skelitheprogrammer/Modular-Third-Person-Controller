@@ -1,16 +1,31 @@
 using NaughtyAttributes;
 using UnityEngine;
 
-public class SlideCheck : MonoBehaviour
+public class SlideCheck : MonoBehaviour, IModule
 {
     [SerializeField] private float _slopeLimit = 45f;
 
     [ShowNativeProperty] public Vector3 HitNormal { get; private set; }
     [ShowNativeProperty] public bool IsSliding { get; private set; }
+   
+    private IModuleHandler _moduleHandler;
 
-    private void Update()
+    private void Awake()
     {
-        Check();    
+        _moduleHandler = GetComponent<IModuleHandler>();
+    }
+    private void OnEnable()
+    {
+        _moduleHandler.Subscribe(this);
+    }
+
+    private void OnDisable()
+    {
+        _moduleHandler.UnSubscribe(this);
+    }
+    public void OnUpdateModule()
+    {
+        Check();
     }
 
     private void Check()

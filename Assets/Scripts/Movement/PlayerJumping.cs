@@ -1,7 +1,7 @@
 using NaughtyAttributes;
 using UnityEngine;
 
-public class PlayerJumping : MonoBehaviour, IMovementValue
+public class PlayerJumping : MonoBehaviour, IMovementValue, IModule
 {
     [SerializeField] private float _jumpHeight = 3f;
     [SerializeField] private float _jumpTimeout = .3f;
@@ -14,6 +14,7 @@ public class PlayerJumping : MonoBehaviour, IMovementValue
     private GravityBase _gravity;
     private GroundCheckerBase _groundCheck;
     private IMovementHandler _handler;
+    private IModuleHandler _moduleHandler;
 
     [ShowNativeProperty] public Vector3 Value { get; private set; }
 
@@ -23,15 +24,31 @@ public class PlayerJumping : MonoBehaviour, IMovementValue
         _gravity = GetComponent<GravityBase>();   
         _groundCheck = GetComponent<GroundCheckerBase>();
         _handler = GetComponent<IMovementHandler>();
-        
-        _handler.Subscribe(this);
+        _moduleHandler = GetComponent<IModuleHandler>();
+
     }
 
-    private void Update()
+    private void OnEnable()
+    {
+        _handler.Subscribe(this);
+        _moduleHandler.Subscribe(this);
+    }
+
+    private void OnDisable()
+    {
+        _handler.UnSubscribe(this);
+        _moduleHandler.UnSubscribe(this);
+    }
+
+/*    private void Update()
+    {
+        Jump();
+    }*/
+
+    public void OnUpdateModule()
     {
         Jump();
     }
-
     private void Jump()
     {
         if (_groundCheck.GetGrounded())
@@ -61,4 +78,6 @@ public class PlayerJumping : MonoBehaviour, IMovementValue
 
         Value = Vector3.up * _currentJumpHeight;
     }
+
+
 }

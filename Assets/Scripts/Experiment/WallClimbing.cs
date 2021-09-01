@@ -1,7 +1,7 @@
 using NaughtyAttributes;
 using UnityEngine;
 
-public class WallClimbing : MonoBehaviour
+public class WallClimbing : MonoBehaviour, IModule
 {
     [SerializeField] private Vector3 topRayOffset;
     [SerializeField] private Vector3 botRayOffset;
@@ -17,12 +17,31 @@ public class WallClimbing : MonoBehaviour
 
     private InputReader _input;
 
+    private IModuleHandler _moduleHandler;
+
+
     private void Awake()
     {
         _input = GetComponent<InputReader>();
+        _moduleHandler = GetComponent<IModuleHandler>();
+    }
+    private void OnEnable()
+    {
+        _moduleHandler.Subscribe(this);
     }
 
-    private void Update()
+    private void OnDisable()
+    {
+        _moduleHandler.UnSubscribe(this);
+    }
+
+    /*    private void Update()
+        {
+            DetectClimb();
+            Climb();
+        }*/
+
+    public void OnUpdateModule()
     {
         DetectClimb();
         Climb();
@@ -62,4 +81,6 @@ public class WallClimbing : MonoBehaviour
         Gizmos.color = _botHit ? Color.red : Color.green;
         Gizmos.DrawRay(transform.position + botRayOffset, transform.forward * _rayLength);
     }
+
+
 }

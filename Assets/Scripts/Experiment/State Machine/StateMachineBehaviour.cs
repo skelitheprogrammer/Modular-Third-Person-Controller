@@ -2,8 +2,6 @@
 
 public class StateMachineBehaviour : MonoBehaviour
 {
-    public string currentStateName;
-
     [SerializeField] private State _initState;
 
     private StateMachine _stateMachine;
@@ -25,6 +23,5 @@ public class StateMachineBehaviour : MonoBehaviour
     private void Update()
     {
         StateMachine.Tick();
-        currentStateName = StateMachine.CurrentState.ToString();
     }
 }

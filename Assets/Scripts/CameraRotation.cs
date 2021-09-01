@@ -1,7 +1,7 @@
 using UnityEngine;
 using NaughtyAttributes;
 
-public class CameraRotation : MonoBehaviour
+public class CameraRotation : MonoBehaviour, IModule
 {
     private InputReader _input;
 
@@ -15,14 +15,32 @@ public class CameraRotation : MonoBehaviour
     [SerializeField] private float _sensitivityX = 1f;
     [SerializeField] private float _sensitivityY = 1f;
 
+    private IModuleHandler _moduleHandler;
+
     [ShowNonSerializedField] private Vector2 _rotation;
 
     private void Awake()
     {
+        _moduleHandler = GetComponent<IModuleHandler>();
         _input = GetComponent<InputReader>();
     }
 
-    private void LateUpdate()
+    private void OnEnable()
+    {
+        _moduleHandler.Subscribe(this);
+    }
+
+    private void OnDisable()
+    {
+        _moduleHandler.Subscribe(this);
+    }
+
+/*    private void LateUpdate()
+    {
+        CameraRotate();
+    }*/
+    
+    public void OnUpdateModule()
     {
         CameraRotate();
     }

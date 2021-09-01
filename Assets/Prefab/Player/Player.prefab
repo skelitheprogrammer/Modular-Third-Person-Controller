@@ -46,7 +46,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28a0bf34942e5d1449adaebcc975f6dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentStateName: 
   _initState: {fileID: 1737189892327210477}
 --- !u!114 &1737189892327210477
 MonoBehaviour:
@@ -63,13 +62,13 @@ MonoBehaviour:
   _stateName: Init State
   _transitions:
   - _transitionName: Ground State
-    _nextState: {fileID: 0}
+    _nextState: {fileID: 1925733826}
     _conditions:
     - _conditionName: Is grounded true
       _shouldBe: 1
       _logic: {fileID: 1087790068231521148}
   - _transitionName: Air State
-    _nextState: {fileID: 0}
+    _nextState: {fileID: 719265019}
     _conditions:
     - _conditionName: Is grounded false
       _shouldBe: 0
@@ -84,6 +83,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7760727415297100921}
+  - component: {fileID: 1925733826}
+  - component: {fileID: 1925733828}
   m_Layer: 0
   m_Name: Ground State Machine
   m_TagString: Untagged
@@ -108,6 +109,50 @@ Transform:
   m_Father: {fileID: 2735336900352551030}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1925733826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 922485632943914762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04d035b8598046e4b9c4bd882c2cb1c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _stateName: Ground SubState Machine
+  _transitions:
+  - _transitionName: Air State
+    _nextState: {fileID: 719265019}
+    _conditions:
+    - _conditionName: Is grounded false
+      _shouldBe: 0
+      _logic: {fileID: 1087790068231521148}
+  _logic: {fileID: 1925733828}
+  _innerState:
+    _stateName: Ground State
+    _transitions:
+    - _transitionName: Walking State
+      _nextState: {fileID: 5856627804973124696}
+      _conditions:
+      - _conditionName: Is grounded true
+        _shouldBe: 1
+        _logic: {fileID: 1087790068231521148}
+    _logic: {fileID: 0}
+--- !u!114 &1925733828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 922485632943914762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c316bf9431efde249b3ed6ce1db60695, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _behaviour: {fileID: 1925733826}
 --- !u!1 &1003993661413379321
 GameObject:
   m_ObjectHideFlags: 0
@@ -384,7 +429,6 @@ GameObject:
   - component: {fileID: 5111174843659982594}
   - component: {fileID: 1239895972}
   - component: {fileID: 384373901}
-  - component: {fileID: 139444171}
   m_Layer: 2
   m_Name: Player
   m_TagString: Untagged
@@ -673,7 +717,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _jumpHeight: 2
-  _jumpTimeout: 0.3
+  _jumpTimeout: 0.15
 --- !u!114 &257407812
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -730,21 +774,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _slopeLimit: 45
---- !u!114 &139444171
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5111174842942027756}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 817826df37908b94896c98f30a45d24e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  topRayOffset: {x: 0, y: 1.3, z: 0}
-  botRayOffset: {x: 0, y: 1, z: 0}
-  _rayLength: 1
 --- !u!1 &5111174844669621400
 GameObject:
   m_ObjectHideFlags: 0
@@ -815,6 +844,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7017482299449295071}
   - component: {fileID: 8057456901613207129}
+  - component: {fileID: 719265019}
   m_Layer: 0
   m_Name: Air State Machine
   m_TagString: Untagged
@@ -848,7 +878,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c316bf9431efde249b3ed6ce1db60695, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _behaviour: {fileID: 0}
+  _behaviour: {fileID: 719265019}
+--- !u!114 &719265019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5538174466399117466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04d035b8598046e4b9c4bd882c2cb1c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _stateName: Air Sub State Machine
+  _transitions:
+  - _transitionName: Ground State
+    _nextState: {fileID: 1925733826}
+    _conditions:
+    - _conditionName: Is grounded true
+      _shouldBe: 1
+      _logic: {fileID: 1087790068231521148}
+  _logic: {fileID: 8057456901613207129}
+  _innerState:
+    _stateName: Air State
+    _transitions: []
+    _logic: {fileID: 0}
 --- !u!1 &5656947275658196400
 GameObject:
   m_ObjectHideFlags: 0
@@ -1287,7 +1342,7 @@ PrefabInstance:
     - target: {fileID: 5866666021909216657, guid: a17ff877d931c5545aa87f63f88d4caa, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 7d74b0745ac274447a71cebb8f427899, type: 2}
+      objectReference: {fileID: 9100000, guid: be2e6c3d7984d0746bacbaf2c15f3299, type: 2}
     - target: {fileID: 5866666021909216657, guid: a17ff877d931c5545aa87f63f88d4caa, type: 3}
       propertyPath: m_ApplyRootMotion
       value: 0

@@ -1,7 +1,7 @@
 ﻿using NaughtyAttributes;
 using UnityEngine;
 
-public class GroundCheckSphereBased : GroundCheckerBase
+public class GroundCheckSphereBased : GroundCheckerBase, IModule
 {
     [SerializeField] private Vector3 _offset;
     [SerializeField] private Transform _target;
@@ -11,12 +11,25 @@ public class GroundCheckSphereBased : GroundCheckerBase
 
     private CharacterController _controller;
 
+    private IModuleHandler _moduleHandler;
+
     private void Awake()
     {
         _controller = GetComponent<CharacterController>();
+        _moduleHandler = GetComponent<IModuleHandler>();
     }
 
-    private void Update()
+    private void OnEnable()
+    {
+        _moduleHandler.Subscribe(this);
+    }
+
+    private void OnDisable()
+    {
+        _moduleHandler.UnSubscribe(this);
+    }
+
+    public void OnUpdateModule()
     {
         Check();
     }
@@ -39,4 +52,6 @@ public class GroundCheckSphereBased : GroundCheckerBase
         Gizmos.color = _isGrounded ? Color.red : Color.green;
         Gizmos.DrawSphere(_target.position + _offset - Vector3.up * _controller.height / 2 + _controller.center, _checkRadius);
     }
+
+
 }

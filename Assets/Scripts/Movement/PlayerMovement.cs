@@ -1,7 +1,7 @@
 ﻿using NaughtyAttributes;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour, IMovementValue
+public class PlayerMovement : MonoBehaviour, IMovementValue, IModule
 {
 
     [Header("Movement settings")]
@@ -33,29 +33,33 @@ public class PlayerMovement : MonoBehaviour, IMovementValue
     [ShowNativeProperty] public Vector3 Value { get; private set; }
 
     private InputReader _input;
-    private IMovementHandler _handler;
+    private IMovementHandler _movementHandler;
+    private IModuleHandler _moduleHandler;
     private GroundCheckerBase _groundCheck;
 
     private void Awake()
     {
         _input = GetComponent<InputReader>();
-        _handler = GetComponent<IMovementHandler>();
+        _movementHandler = GetComponent<IMovementHandler>();
+        _moduleHandler = GetComponent<IModuleHandler>();
         _groundCheck = GetComponent<GroundCheckerBase>();
     }
 
     private void OnEnable()
     {
-        _handler.Subscribe(this);
+        _movementHandler.Subscribe(this);
+        _moduleHandler.Subscribe(this);
 
         _currentEndurance = _endurance;
     }
 
     private void OnDisable()
     {
-        _handler.UnSubscribe(this);
+        _movementHandler.UnSubscribe(this);
+        _moduleHandler.UnSubscribe(this);
     }
 
-    private void Update()
+    public void OnUpdateModule()
     {
         Move();
         Sprint();
@@ -65,29 +69,30 @@ public class PlayerMovement : MonoBehaviour, IMovementValue
     {
         Vector3 inputDirection = new Vector3(_input.MoveInput.x, 0, _input.MoveInput.y);
 
-        float finalSpeed = _isSprinting ? _sprintSpeed : _walkSpeed;
-
-        float targetSpeed = finalSpeed * inputDirection.magnitude;
-
         if (_groundCheck.GetGrounded())
         {
+            float finalSpeed = _isSprinting ? _sprintSpeed : _walkSpeed;
+            float targetSpeed = finalSpeed * inputDirection.magnitude;
+
             MovementDirection = inputDirection;
             MovementDirection = transform.TransformDirection(MovementDirection);
             
-            AirDirection = Vector3.zero;
-
             _currentSpeed = Mathf.MoveTowards(_currentSpeed, targetSpeed, _acceleration * Time.deltaTime);
+
+            if (AirDirection != Vector3.zero)
+            {
+                AirDirection = Vector3.zero;
+                AirDirectionTransformed = Vector3.zero;
+            }
         }
         else
         {
             if (inputDirection != Vector3.zero)
             {
                 AirDirection += inputDirection;
-
+                AirDirectionTransformed = transform.TransformDirection(AirDirection);
             }
         }
-
-        AirDirectionTransformed = transform.TransformDirection(AirDirection);
 
         Vector3 finalDirection = (MovementDirection + AirDirectionTransformed).normalized * _currentSpeed;
 
@@ -147,4 +152,5 @@ public class PlayerMovement : MonoBehaviour, IMovementValue
         }
 
     }
+
 }
