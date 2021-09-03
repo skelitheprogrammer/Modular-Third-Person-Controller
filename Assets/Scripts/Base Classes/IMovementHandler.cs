@@ -1,8 +1,8 @@
-﻿using UnityEngine;
+﻿
+using UnityEngine;
 
 public interface IMovementHandler
 {
-    void Subscribe(IMovementValue value);
-    void UnSubscribe(IMovementValue value);
+    Observer<IMovementValue> MovementObserver { get; }
     Vector3 Movement { get; }
 }

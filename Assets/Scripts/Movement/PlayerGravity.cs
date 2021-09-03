@@ -30,14 +30,14 @@ public class PlayerGravity : GravityBase, IMovementValue, IModule
 
     private void OnEnable()
     {
-        _moduleHandler.Subscribe(this);
-        _handler.Subscribe(this);
+        _moduleHandler.ModuleObserver.Subscribe(this);
+        _handler.MovementObserver.Subscribe(this);
     }
 
     private void OnDisable()
     {
-        _moduleHandler.UnSubscribe(this);
-        _handler.UnSubscribe(this);
+        _moduleHandler.ModuleObserver.Unsubscribe(this);
+        _handler.MovementObserver.Unsubscribe(this);
     }
 
     public void OnUpdateModule()

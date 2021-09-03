@@ -16,12 +16,12 @@ public class SlideCheck : MonoBehaviour, IModule
     }
     private void OnEnable()
     {
-        _moduleHandler.Subscribe(this);
+        _moduleHandler.ModuleObserver.Subscribe(this);
     }
 
     private void OnDisable()
     {
-        _moduleHandler.UnSubscribe(this);
+        _moduleHandler.ModuleObserver.Unsubscribe(this);
     }
     public void OnUpdateModule()
     {

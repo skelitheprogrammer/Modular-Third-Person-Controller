@@ -30,14 +30,14 @@ public class PlayerJumping : MonoBehaviour, IMovementValue, IModule
 
     private void OnEnable()
     {
-        _handler.Subscribe(this);
-        _moduleHandler.Subscribe(this);
+        _handler.MovementObserver.Subscribe(this);
+        _moduleHandler.ModuleObserver.Subscribe(this);
     }
 
     private void OnDisable()
     {
-        _handler.UnSubscribe(this);
-        _moduleHandler.UnSubscribe(this);
+        _handler.MovementObserver.Unsubscribe(this);
+        _moduleHandler.ModuleObserver.Unsubscribe(this);
     }
 
 /*    private void Update()

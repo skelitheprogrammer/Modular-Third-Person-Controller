@@ -27,12 +27,12 @@ public class CameraRotation : MonoBehaviour, IModule
 
     private void OnEnable()
     {
-        _moduleHandler.Subscribe(this);
+        _moduleHandler.ModuleObserver.Subscribe(this);
     }
 
     private void OnDisable()
     {
-        _moduleHandler.Subscribe(this);
+        _moduleHandler.ModuleObserver.Unsubscribe(this);
     }
 
 /*    private void LateUpdate()

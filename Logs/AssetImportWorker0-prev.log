@@ -15,11 +15,11 @@ D:/Projects/Modular-Third-Person-Controller
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-52646
+52135
 Successfully changed project path to: D:/Projects/Modular-Third-Person-Controller
 D:/Projects/Modular-Third-Person-Controller
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 49.41 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 43.24 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.14f1 (d0d1bb862f9d)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.14f1/Editor/Data/Resources/UnitySubsystems
@@ -35,89 +35,89 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.14f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.14f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.14f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56976
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56060
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.14f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.002645 seconds.
+Registered in 0.007134 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 45.71 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 49.89 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  2.493 seconds
+- Completed reload, in  2.798 seconds
 Domain Reload Profiling:
-	ReloadAssembly (2494ms)
-		BeginReloadAssembly (74ms)
+	ReloadAssembly (2798ms)
+		BeginReloadAssembly (73ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (573ms)
-			LoadAssemblies (71ms)
+		EndReloadAssembly (689ms)
+			LoadAssemblies (70ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (216ms)
+			SetupTypeCache (260ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (42ms)
-			SetupLoadedEditorAssemblies (217ms)
+			RebuildScriptCaches (43ms)
+			SetupLoadedEditorAssemblies (276ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (5ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (46ms)
-				BeforeProcessingInitializeOnLoad (19ms)
-				ProcessInitializeOnLoadAttributes (107ms)
-				ProcessInitializeOnLoadMethodAttributes (39ms)
+				RefreshPlugins (50ms)
+				BeforeProcessingInitializeOnLoad (23ms)
+				ProcessInitializeOnLoadAttributes (156ms)
+				ProcessInitializeOnLoadMethodAttributes (41ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.000871 seconds.
+Registered in 0.001412 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 48.11 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 82.72 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.318 seconds
+- Completed reload, in  2.433 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1319ms)
-		BeginReloadAssembly (209ms)
+	ReloadAssembly (2434ms)
+		BeginReloadAssembly (224ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (6ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (28ms)
-		EndReloadAssembly (1026ms)
-			LoadAssemblies (110ms)
+		EndReloadAssembly (1965ms)
+			LoadAssemblies (165ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (302ms)
+			SetupTypeCache (930ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (69ms)
-			SetupLoadedEditorAssemblies (376ms)
+			RebuildScriptCaches (73ms)
+			SetupLoadedEditorAssemblies (590ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (5ms)
+				InitializePlatformSupportModulesInManaged (7ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (48ms)
-				BeforeProcessingInitializeOnLoad (96ms)
-				ProcessInitializeOnLoadAttributes (213ms)
-				ProcessInitializeOnLoadMethodAttributes (6ms)
-				AfterProcessingInitializeOnLoad (8ms)
+				RefreshPlugins (83ms)
+				BeforeProcessingInitializeOnLoad (168ms)
+				ProcessInitializeOnLoadAttributes (315ms)
+				ProcessInitializeOnLoadMethodAttributes (7ms)
+				AfterProcessingInitializeOnLoad (9ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (9ms)
+			AwakeInstancesAfterBackupRestoration (10ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
-Refreshing native plugins compatible for Editor in 0.41 ms, found 0 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.07 seconds
+Refreshing native plugins compatible for Editor in 0.44 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1930 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 1926 Unused Serialized files (Serialized files now loaded: 0)
 System memory in use before: 90.9 MB.
 System memory in use after: 90.9 MB.
 
-Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 2373.
-Total: 2.614100 ms (FindLiveObjects: 0.262300 ms CreateObjectMapping: 0.188000 ms MarkObjects: 2.035100 ms  DeleteObjects: 0.127300 ms)
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 2369.
+Total: 2.591800 ms (FindLiveObjects: 0.211100 ms CreateObjectMapping: 0.087500 ms MarkObjects: 2.123000 ms  DeleteObjects: 0.168800 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -131,32 +131,441 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  path: Assets/Scripts/Movement/PlayerMovement.cs
-  artifactKey: Guid(80992fcc863a4bf4eb0521f7926cf9fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Movement/PlayerMovement.cs using Guid(80992fcc863a4bf4eb0521f7926cf9fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a8c90595b3d069c639ef45909532badb') in 0.037330 seconds 
-  Import took 0.041516 seconds .
+  path: Assets/Scripts/Movement/PlayerSprinting.cs
+  artifactKey: Guid(bad69450388a83545bbf897d4783de8e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Movement/PlayerSprinting.cs using Guid(bad69450388a83545bbf897d4783de8e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4871e276f94c45e3cf548e760b325b84') in 0.041294 seconds 
+  Import took 0.048292 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000263 seconds.
-  path: Assets/Scripts/Movement/PlayerSliding.cs
-  artifactKey: Guid(ff0f8f3fd7f2a1d4494f9f3fccfbd54c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Movement/PlayerSliding.cs using Guid(ff0f8f3fd7f2a1d4494f9f3fccfbd54c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '02ecd1ccd1a5cda7b81622c38f92bdc3') in 0.007764 seconds 
-  Import took 0.013019 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 22.309961 seconds.
-  path: Assets/Scripts/Movement/ModuleHandler.cs
+  Time since last request: 36.619434 seconds.
+  path: Assets/Scripts/Movement/PlayerHandler.cs
   artifactKey: Guid(ff16462b45fe0f348be5b7ba244de525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Movement/ModuleHandler.cs using Guid(ff16462b45fe0f348be5b7ba244de525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '64d93ee7df628cdecbb4345f46a99ca9') in 0.011824 seconds 
-  Import took 0.016851 seconds .
+Start importing Assets/Scripts/Movement/PlayerHandler.cs using Guid(ff16462b45fe0f348be5b7ba244de525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '375e12be24eaa1a55280ee19addf6857') in 0.010890 seconds 
+  Import took 0.019701 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000620 seconds.
-  path: Assets/Scripts/Movement/ModuleHandler.cs
+  Time since last request: 0.004231 seconds.
+  path: Assets/Scripts/Movement/PlayerHandler.cs
   artifactKey: Guid(ff16462b45fe0f348be5b7ba244de525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Movement/ModuleHandler.cs using Guid(ff16462b45fe0f348be5b7ba244de525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '64d93ee7df628cdecbb4345f46a99ca9') in 0.002612 seconds 
-  Import took 0.010928 seconds .
+Start importing Assets/Scripts/Movement/PlayerHandler.cs using Guid(ff16462b45fe0f348be5b7ba244de525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '375e12be24eaa1a55280ee19addf6857') in 0.004753 seconds 
+  Import took 0.009142 seconds .
 
+========================================================================
+Received Import Request.
+  Time since last request: 3.184460 seconds.
+  path: Assets/Scripts/Movement/PlayerHandler.cs
+  artifactKey: Guid(ff16462b45fe0f348be5b7ba244de525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Movement/PlayerHandler.cs using Guid(ff16462b45fe0f348be5b7ba244de525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '34c6d9800f6f283c7edd1fffdff8fbdb') in 0.011423 seconds 
+  Import took 0.021586 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.080184 seconds.
+  path: Assets/Scripts/Movement/PlayerHandler.cs
+  artifactKey: Guid(ff16462b45fe0f348be5b7ba244de525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Movement/PlayerHandler.cs using Guid(ff16462b45fe0f348be5b7ba244de525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bd7237f2be75957838c38f8572992a85') in 0.009203 seconds 
+  Import took 0.018076 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 16.742898 seconds.
+  path: Assets/Scripts/Movement/PlayerHandler.cs
+  artifactKey: Guid(ff16462b45fe0f348be5b7ba244de525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Movement/PlayerHandler.cs using Guid(ff16462b45fe0f348be5b7ba244de525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4d9486beda0f77a4b10ff9791b5b438a') in 0.024996 seconds 
+  Import took 0.030194 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000530 seconds.
+  path: Assets/Scripts/Movement/PlayerHandler.cs
+  artifactKey: Guid(ff16462b45fe0f348be5b7ba244de525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Movement/PlayerHandler.cs using Guid(ff16462b45fe0f348be5b7ba244de525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4d9486beda0f77a4b10ff9791b5b438a') in 0.003078 seconds 
+  Import took 0.008080 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 23.165122 seconds.
+  path: Assets/Scripts/Movement/PlayerHandler.cs
+  artifactKey: Guid(ff16462b45fe0f348be5b7ba244de525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Movement/PlayerHandler.cs using Guid(ff16462b45fe0f348be5b7ba244de525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e3cd9b856015332b1e04eda8b4249b1e') in 0.009496 seconds 
+  Import took 0.019183 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 71.157493 seconds.
+  path: Assets/Scripts/Movement/PlayerHandler.cs
+  artifactKey: Guid(ff16462b45fe0f348be5b7ba244de525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Movement/PlayerHandler.cs using Guid(ff16462b45fe0f348be5b7ba244de525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0316bb5b55b3fe71685d1e6ea0fa22c3') in 0.012234 seconds 
+  Import took 0.019141 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 21.082681 seconds.
+  path: Assets/Scripts/Movement/PlayerHandler.cs
+  artifactKey: Guid(ff16462b45fe0f348be5b7ba244de525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Movement/PlayerHandler.cs using Guid(ff16462b45fe0f348be5b7ba244de525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1ef43071b3f3e9dcc9e870c7c752cdd7') in 0.010115 seconds 
+  Import took 0.018506 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.324686 seconds.
+  path: Assets/Scripts/Movement/PlayerHandler.cs
+  artifactKey: Guid(ff16462b45fe0f348be5b7ba244de525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Movement/PlayerHandler.cs using Guid(ff16462b45fe0f348be5b7ba244de525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '79d1737fd1bdea04d6aa247431a76c26') in 0.008823 seconds 
+  Import took 0.015001 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.067061 seconds.
+  path: Assets/Scripts/Movement/PlayerHandler.cs
+  artifactKey: Guid(ff16462b45fe0f348be5b7ba244de525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Movement/PlayerHandler.cs using Guid(ff16462b45fe0f348be5b7ba244de525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '98d652eef0eafa83ee2bcd1aa6edf289') in 0.021479 seconds 
+  Import took 0.026518 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 45.309928 seconds.
+  path: Assets/Scripts/Movement/PlayerHandler.cs
+  artifactKey: Guid(ff16462b45fe0f348be5b7ba244de525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Movement/PlayerHandler.cs using Guid(ff16462b45fe0f348be5b7ba244de525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '99f7bb7286a67e5b0c0bdf8220c2eb70') in 0.008449 seconds 
+  Import took 0.013553 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 33.485023 seconds.
+  path: Assets/Scripts/Movement/PlayerHandler.cs
+  artifactKey: Guid(ff16462b45fe0f348be5b7ba244de525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Movement/PlayerHandler.cs using Guid(ff16462b45fe0f348be5b7ba244de525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '02e34c5366f4eaa7291c98bddd7e2ecb') in 0.011540 seconds 
+  Import took 0.020743 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 8.457641 seconds.
+  path: Assets/Scripts/Movement/PlayerHandler.cs
+  artifactKey: Guid(ff16462b45fe0f348be5b7ba244de525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Movement/PlayerHandler.cs using Guid(ff16462b45fe0f348be5b7ba244de525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7b1f8b5c3cc4b101594e2d738ce03004') in 0.012619 seconds 
+  Import took 0.016998 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 29.366683 seconds.
+  path: Assets/Scripts/Movement/PlayerHandler.cs
+  artifactKey: Guid(ff16462b45fe0f348be5b7ba244de525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Movement/PlayerHandler.cs using Guid(ff16462b45fe0f348be5b7ba244de525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b2cfe30b480b6e14994e6f9e1829fa1e') in 0.014447 seconds 
+  Import took 0.022564 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.763330 seconds.
+  path: Assets/Scripts/Movement/PlayerHandler.cs
+  artifactKey: Guid(ff16462b45fe0f348be5b7ba244de525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Movement/PlayerHandler.cs using Guid(ff16462b45fe0f348be5b7ba244de525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a54940003265b16514ed75662ec45492') in 0.009573 seconds 
+  Import took 0.026947 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.005296 seconds.
+  path: Assets/Scripts/Movement/PlayerHandler.cs
+  artifactKey: Guid(ff16462b45fe0f348be5b7ba244de525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Movement/PlayerHandler.cs using Guid(ff16462b45fe0f348be5b7ba244de525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a54940003265b16514ed75662ec45492') in 0.006632 seconds 
+  Import took 0.010755 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.881899 seconds.
+  path: Assets/Scripts/Movement/PlayerHandler.cs
+  artifactKey: Guid(ff16462b45fe0f348be5b7ba244de525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Movement/PlayerHandler.cs using Guid(ff16462b45fe0f348be5b7ba244de525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '10112fac496135e92d216caa7ac76127') in 0.008961 seconds 
+  Import took 0.018741 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 13.701722 seconds.
+  path: Assets/Scripts/Movement/PlayerHandler.cs
+  artifactKey: Guid(ff16462b45fe0f348be5b7ba244de525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Movement/PlayerHandler.cs using Guid(ff16462b45fe0f348be5b7ba244de525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e0c1d039e5aeabb1ab29f39799ce7adc') in 0.012190 seconds 
+  Import took 0.018811 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.894112 seconds.
+  path: Assets/Scripts/Movement/PlayerHandler.cs
+  artifactKey: Guid(ff16462b45fe0f348be5b7ba244de525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Movement/PlayerHandler.cs using Guid(ff16462b45fe0f348be5b7ba244de525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4c6b6b4421f8797e25d1d2aef11242ba') in 0.009129 seconds 
+  Import took 0.016707 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.231090 seconds.
+  path: Assets/Scripts/Movement/PlayerHandler.cs
+  artifactKey: Guid(ff16462b45fe0f348be5b7ba244de525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Movement/PlayerHandler.cs using Guid(ff16462b45fe0f348be5b7ba244de525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '86c671c845b4bbb698f17d642aa65cae') in 0.013991 seconds 
+  Import took 0.022385 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.648194 seconds.
+  path: Assets/Scripts/Movement/PlayerHandler.cs
+  artifactKey: Guid(ff16462b45fe0f348be5b7ba244de525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Movement/PlayerHandler.cs using Guid(ff16462b45fe0f348be5b7ba244de525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '82527ad80345b9818f529839c2394f37') in 0.016599 seconds 
+  Import took 0.021454 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.176575 seconds.
+  path: Assets/Scripts/Movement/PlayerHandler.cs
+  artifactKey: Guid(ff16462b45fe0f348be5b7ba244de525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Movement/PlayerHandler.cs using Guid(ff16462b45fe0f348be5b7ba244de525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0035fe3c77a9d9e3438bb88bc939a1a8') in 0.016468 seconds 
+  Import took 0.023798 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003535 seconds.
+  path: Assets/Scripts/Movement/PlayerHandler.cs
+  artifactKey: Guid(ff16462b45fe0f348be5b7ba244de525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Movement/PlayerHandler.cs using Guid(ff16462b45fe0f348be5b7ba244de525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0035fe3c77a9d9e3438bb88bc939a1a8') in 0.002861 seconds 
+  Import took 0.014260 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 16.629293 seconds.
+  path: Assets/Scripts/Movement/PlayerHandler.cs
+  artifactKey: Guid(ff16462b45fe0f348be5b7ba244de525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Movement/PlayerHandler.cs using Guid(ff16462b45fe0f348be5b7ba244de525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e1ca2ff410f27a8b2135e667b914e2ee') in 0.014559 seconds 
+  Import took 0.021771 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.154731 seconds.
+  path: Assets/Scripts/Movement/PlayerHandler.cs
+  artifactKey: Guid(ff16462b45fe0f348be5b7ba244de525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Movement/PlayerHandler.cs using Guid(ff16462b45fe0f348be5b7ba244de525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '37cc548b73819f0f018a2df4e90099de') in 0.013923 seconds 
+  Import took 0.018961 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.230805 seconds.
+  path: Assets/Scripts/Movement/PlayerHandler.cs
+  artifactKey: Guid(ff16462b45fe0f348be5b7ba244de525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Movement/PlayerHandler.cs using Guid(ff16462b45fe0f348be5b7ba244de525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '76d94eb77ea75c19a0d6ef698287f195') in 0.006259 seconds 
+  Import took 0.011676 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 10.041860 seconds.
+  path: Assets/Scripts/Movement/PlayerHandler.cs
+  artifactKey: Guid(ff16462b45fe0f348be5b7ba244de525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Movement/PlayerHandler.cs using Guid(ff16462b45fe0f348be5b7ba244de525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c52b678b40ada0a29e7e2f35ab0e8a61') in 0.028267 seconds 
+  Import took 0.033277 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.915843 seconds.
+  path: Assets/Scripts/Movement/PlayerHandler.cs
+  artifactKey: Guid(ff16462b45fe0f348be5b7ba244de525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Movement/PlayerHandler.cs using Guid(ff16462b45fe0f348be5b7ba244de525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '36f09f193d76d92563738b1475865962') in 0.017606 seconds 
+  Import took 0.022108 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 11.670457 seconds.
+  path: Assets/Scripts/Movement/PlayerHandler.cs
+  artifactKey: Guid(ff16462b45fe0f348be5b7ba244de525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Movement/PlayerHandler.cs using Guid(ff16462b45fe0f348be5b7ba244de525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f9947cb11c54d8a74af9928b4e07a810') in 0.015175 seconds 
+  Import took 0.021341 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.033240 seconds.
+  path: Assets/Scripts/Movement/PlayerHandler.cs
+  artifactKey: Guid(ff16462b45fe0f348be5b7ba244de525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Movement/PlayerHandler.cs using Guid(ff16462b45fe0f348be5b7ba244de525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f9947cb11c54d8a74af9928b4e07a810') in 0.004757 seconds 
+  Import took 0.009033 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 15.880004 seconds.
+  path: Assets/Scripts/Movement/PlayerHandler.cs
+  artifactKey: Guid(ff16462b45fe0f348be5b7ba244de525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Movement/PlayerHandler.cs using Guid(ff16462b45fe0f348be5b7ba244de525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b8806c8ee5a6e39ee6194e8be8ed8a7e') in 0.023350 seconds 
+  Import took 0.029927 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 14.285986 seconds.
+  path: Assets/Scripts/Movement/PlayerHandler.cs
+  artifactKey: Guid(ff16462b45fe0f348be5b7ba244de525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Movement/PlayerHandler.cs using Guid(ff16462b45fe0f348be5b7ba244de525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f6b291bb5a4be0960243385a5d2efec2') in 0.038170 seconds 
+  Import took 0.045123 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.022921 seconds.
+  path: Assets/Scripts/Movement/PlayerHandler.cs
+  artifactKey: Guid(ff16462b45fe0f348be5b7ba244de525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Movement/PlayerHandler.cs using Guid(ff16462b45fe0f348be5b7ba244de525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f6b291bb5a4be0960243385a5d2efec2') in 0.004366 seconds 
+  Import took 0.008949 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.092984 seconds.
+  path: Assets/Scripts/Movement/PlayerHandler.cs
+  artifactKey: Guid(ff16462b45fe0f348be5b7ba244de525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Movement/PlayerHandler.cs using Guid(ff16462b45fe0f348be5b7ba244de525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ace8218cbe8cba6004f45b2ae8f34b1b') in 0.016388 seconds 
+  Import took 0.022457 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 19.733536 seconds.
+  path: Assets/Scripts/Movement/PlayerHandler.cs
+  artifactKey: Guid(ff16462b45fe0f348be5b7ba244de525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Movement/PlayerHandler.cs using Guid(ff16462b45fe0f348be5b7ba244de525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '43cd5a9cb59e6b084ebc8b6a06719e82') in 0.012265 seconds 
+  Import took 0.017933 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.706269 seconds.
+  path: Assets/Scripts/Movement/PlayerHandler.cs
+  artifactKey: Guid(ff16462b45fe0f348be5b7ba244de525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Movement/PlayerHandler.cs using Guid(ff16462b45fe0f348be5b7ba244de525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bb7617e415e24fabb6cb19c5aa33231e') in 0.005436 seconds 
+  Import took 0.015752 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.622691 seconds.
+  path: Assets/Scripts/Movement/PlayerHandler.cs
+  artifactKey: Guid(ff16462b45fe0f348be5b7ba244de525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Movement/PlayerHandler.cs using Guid(ff16462b45fe0f348be5b7ba244de525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fe175da443100606887312151792fb1a') in 0.024230 seconds 
+  Import took 0.028401 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 21.550987 seconds.
+  path: Assets/Scripts/Movement/PlayerHandler.cs
+  artifactKey: Guid(ff16462b45fe0f348be5b7ba244de525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Movement/PlayerHandler.cs using Guid(ff16462b45fe0f348be5b7ba244de525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4491c407c738afce595e760a1f32a8b5') in 0.015663 seconds 
+  Import took 0.021061 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.010538 seconds.
+  path: Assets/Scripts/Movement/PlayerHandler.cs
+  artifactKey: Guid(ff16462b45fe0f348be5b7ba244de525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Movement/PlayerHandler.cs using Guid(ff16462b45fe0f348be5b7ba244de525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4491c407c738afce595e760a1f32a8b5') in 0.003739 seconds 
+  Import took 0.007936 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 21.694305 seconds.
+  path: Assets/Scripts/Movement/PlayerHandler.cs
+  artifactKey: Guid(ff16462b45fe0f348be5b7ba244de525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Movement/PlayerHandler.cs using Guid(ff16462b45fe0f348be5b7ba244de525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '69da2a712bea252ea19c373970553d1e') in 0.011868 seconds 
+  Import took 0.031773 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.009285 seconds.
+  path: Assets/Scripts/Movement/PlayerHandler.cs
+  artifactKey: Guid(ff16462b45fe0f348be5b7ba244de525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Movement/PlayerHandler.cs using Guid(ff16462b45fe0f348be5b7ba244de525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '69da2a712bea252ea19c373970553d1e') in 0.004151 seconds 
+  Import took 0.007956 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 11.662322 seconds.
+  path: Assets/Scripts/Movement/PlayerHandler.cs
+  artifactKey: Guid(ff16462b45fe0f348be5b7ba244de525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Movement/PlayerHandler.cs using Guid(ff16462b45fe0f348be5b7ba244de525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '56e2a38730ec841eba20c11bc4703a4a') in 0.017107 seconds 
+  Import took 0.023719 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 9.846866 seconds.
+  path: Assets/Scripts/Movement/PlayerHandler.cs
+  artifactKey: Guid(ff16462b45fe0f348be5b7ba244de525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Movement/PlayerHandler.cs using Guid(ff16462b45fe0f348be5b7ba244de525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '342bd0f2962dd89d7b1a79e496f06d96') in 0.013447 seconds 
+  Import took 0.051318 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.942656 seconds.
+  path: Assets/Scripts/Movement/PlayerHandler.cs
+  artifactKey: Guid(ff16462b45fe0f348be5b7ba244de525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Movement/PlayerHandler.cs using Guid(ff16462b45fe0f348be5b7ba244de525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '10dee77c4747cadb9da4c3957a164f18') in 0.014497 seconds 
+  Import took 0.021239 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 9.818262 seconds.
+  path: Assets/Scripts/Movement/PlayerHandler.cs
+  artifactKey: Guid(ff16462b45fe0f348be5b7ba244de525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Movement/PlayerHandler.cs using Guid(ff16462b45fe0f348be5b7ba244de525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5844a1f1812aa2c63296cee9a1f844c0') in 0.015943 seconds 
+  Import took 0.026540 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.008735 seconds.
+  path: Assets/Scripts/Movement/PlayerHandler.cs
+  artifactKey: Guid(ff16462b45fe0f348be5b7ba244de525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Movement/PlayerHandler.cs using Guid(ff16462b45fe0f348be5b7ba244de525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5844a1f1812aa2c63296cee9a1f844c0') in 0.003781 seconds 
+  Import took 0.008992 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001185 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.39 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.304 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1305ms)
+		BeginReloadAssembly (186ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (6ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (66ms)
+		EndReloadAssembly (954ms)
+			LoadAssemblies (107ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (300ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (51ms)
+			SetupLoadedEditorAssemblies (349ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (5ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (0ms)
+				BeforeProcessingInitializeOnLoad (96ms)
+				ProcessInitializeOnLoadAttributes (232ms)
+				ProcessInitializeOnLoadMethodAttributes (5ms)
+				AfterProcessingInitializeOnLoad (10ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (11ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.43 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1883 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 87.3 MB.
+System memory in use after: 87.4 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 2371.
+Total: 2.763100 ms (FindLiveObjects: 0.255400 ms CreateObjectMapping: 0.153000 ms MarkObjects: 2.221300 ms  DeleteObjects: 0.131700 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file

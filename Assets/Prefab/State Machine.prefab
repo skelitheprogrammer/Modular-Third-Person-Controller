@@ -1,0 +1,470 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1260637410642521553
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5877921822764311937}
+  - component: {fileID: 2003678019536203312}
+  m_Layer: 0
+  m_Name: Slide State
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5877921822764311937
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1260637410642521553}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5838321539487586571}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2003678019536203312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1260637410642521553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61bbbc43f9544ab48b88051095dedbe3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _stateName: Slide State
+  _transitions:
+  - _transitionName: Crouch State
+    _nextState: {fileID: 4398854198848842607}
+    _conditions:
+    - _conditionName: Is sliding false
+      _shouldBe: 0
+      _logic: {fileID: 0}
+    - _conditionName: Is crouching true
+      _shouldBe: 1
+      _logic: {fileID: 0}
+  - _transitionName: Walk State
+    _nextState: {fileID: 7777906788352481578}
+    _conditions:
+    - _conditionName: Is sliding false
+      _shouldBe: 0
+      _logic: {fileID: 0}
+    - _conditionName: Is crouching false
+      _shouldBe: 0
+      _logic: {fileID: 0}
+  _logic: {fileID: 0}
+--- !u!1 &3925754852336331384
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5838321539487586571}
+  - component: {fileID: 4230646925625936048}
+  - component: {fileID: 4230646925625936054}
+  m_Layer: 0
+  m_Name: Ground State Machine
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5838321539487586571
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3925754852336331384}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 3755453931656491365}
+  - {fileID: 5877921822764311937}
+  - {fileID: 6636338810800091407}
+  - {fileID: 2641098157606729273}
+  m_Father: {fileID: 2252812041515973892}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4230646925625936048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3925754852336331384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04d035b8598046e4b9c4bd882c2cb1c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _stateName: Ground SubState Machine
+  _transitions:
+  - _transitionName: Air State
+    _nextState: {fileID: 4230646924956338569}
+    _conditions:
+    - _conditionName: Is grounded false
+      _shouldBe: 0
+      _logic: {fileID: 0}
+  _logic: {fileID: 4230646925625936054}
+  _innerState:
+    _stateName: Ground State
+    _transitions:
+    - _transitionName: Walking State
+      _nextState: {fileID: 7777906788352481578}
+      _conditions:
+      - _conditionName: Is grounded true
+        _shouldBe: 1
+        _logic: {fileID: 0}
+    _logic: {fileID: 0}
+--- !u!114 &4230646925625936054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3925754852336331384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c316bf9431efde249b3ed6ce1db60695, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _behaviour: {fileID: 4230646925625936048}
+--- !u!1 &4218345035083430351
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2252812041515973892}
+  - component: {fileID: 4809907205817379565}
+  - component: {fileID: 2498930404142082207}
+  m_Layer: 0
+  m_Name: Init
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2252812041515973892
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4218345035083430351}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 5838321539487586571}
+  - {fileID: 6617296443403425197}
+  m_Father: {fileID: 8586112415334843347}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4809907205817379565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4218345035083430351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28a0bf34942e5d1449adaebcc975f6dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _initState: {fileID: 2498930404142082207}
+--- !u!114 &2498930404142082207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4218345035083430351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61bbbc43f9544ab48b88051095dedbe3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _stateName: Init State
+  _transitions:
+  - _transitionName: Ground State
+    _nextState: {fileID: 4230646925625936048}
+    _conditions:
+    - _conditionName: Is grounded true
+      _shouldBe: 1
+      _logic: {fileID: 0}
+  - _transitionName: Air State
+    _nextState: {fileID: 4230646924956338569}
+    _conditions:
+    - _conditionName: Is grounded false
+      _shouldBe: 0
+      _logic: {fileID: 0}
+  _logic: {fileID: 0}
+--- !u!1 &4878294566444750346
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8586112415334843347}
+  m_Layer: 0
+  m_Name: State Machine
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8586112415334843347
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4878294566444750346}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.025342634, y: 0.94540656, z: -0.15149868}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 2252812041515973892}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8374379073869734082
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6636338810800091407}
+  - component: {fileID: 7777906788352481578}
+  m_Layer: 0
+  m_Name: Walking State
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6636338810800091407
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8374379073869734082}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5838321539487586571}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7777906788352481578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8374379073869734082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61bbbc43f9544ab48b88051095dedbe3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _stateName: Walk State
+  _transitions:
+  - _transitionName: Crouch State
+    _nextState: {fileID: 4398854198848842607}
+    _conditions:
+    - _conditionName: Is crouching true
+      _shouldBe: 1
+      _logic: {fileID: 0}
+  - _transitionName: Slide State
+    _nextState: {fileID: 2003678019536203312}
+    _conditions:
+    - _conditionName: Is sliding true
+      _shouldBe: 1
+      _logic: {fileID: 0}
+    - _conditionName: Is crouching false
+      _shouldBe: 0
+      _logic: {fileID: 0}
+  _logic: {fileID: 0}
+--- !u!1 &8533699670820238824
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6617296443403425197}
+  - component: {fileID: 6154046476372454187}
+  - component: {fileID: 4230646924956338569}
+  m_Layer: 0
+  m_Name: Air State Machine
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6617296443403425197
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8533699670820238824}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2252812041515973892}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6154046476372454187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8533699670820238824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c316bf9431efde249b3ed6ce1db60695, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _behaviour: {fileID: 4230646924956338569}
+--- !u!114 &4230646924956338569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8533699670820238824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04d035b8598046e4b9c4bd882c2cb1c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _stateName: Air Sub State Machine
+  _transitions:
+  - _transitionName: Ground State
+    _nextState: {fileID: 4230646925625936048}
+    _conditions:
+    - _conditionName: Is grounded true
+      _shouldBe: 1
+      _logic: {fileID: 0}
+  _logic: {fileID: 6154046476372454187}
+  _innerState:
+    _stateName: Air State
+    _transitions: []
+    _logic: {fileID: 0}
+--- !u!1 &8622173511626576354
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2641098157606729273}
+  m_Layer: 0
+  m_Name: Sprinting State
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2641098157606729273
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8622173511626576354}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5838321539487586571}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8679165198256656866
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3755453931656491365}
+  - component: {fileID: 4398854198848842607}
+  m_Layer: 0
+  m_Name: Crouch State
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3755453931656491365
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8679165198256656866}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5838321539487586571}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4398854198848842607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8679165198256656866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61bbbc43f9544ab48b88051095dedbe3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _stateName: Crouch State
+  _transitions:
+  - _transitionName: Sliding State
+    _nextState: {fileID: 2003678019536203312}
+    _conditions:
+    - _conditionName: Is sliding true
+      _shouldBe: 1
+      _logic: {fileID: 0}
+  - _transitionName: Walk State
+    _nextState: {fileID: 2003678019536203312}
+    _conditions:
+    - _conditionName: Is crouching false
+      _shouldBe: 0
+      _logic: {fileID: 0}
+  _logic: {fileID: 0}

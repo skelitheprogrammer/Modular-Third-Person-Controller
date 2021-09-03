@@ -1,8 +1,11 @@
 using NaughtyAttributes;
 using UnityEngine;
 
-public class PlayerCrouching : MonoBehaviour, IModule
+public class PlayerCrouching : MonoBehaviour, IModule, IChangeableSpeed
 {
+    [SerializeField] private float _crouchSpeed;
+    public float Speed => _crouchSpeed;
+
     [SerializeField] private float _crouchHeight;
     [SerializeField] private float _crouchTimeout;
     
@@ -11,9 +14,8 @@ public class PlayerCrouching : MonoBehaviour, IModule
 
     [ShowNonSerializedField] private float _crouchTimeoutDelta;
 
-    [ShowNativeProperty] public bool IsCrouching { get; private set; }
-
-    public Vector3 Value { get; private set; }
+    [ShowNonSerializedField] private bool _isCrouching;
+    public bool IsChanging => _isCrouching;
 
     private CharacterController _controller;
     private InputReader _input;
@@ -30,12 +32,12 @@ public class PlayerCrouching : MonoBehaviour, IModule
 
     private void OnEnable()
     {
-        _moduleHandler.Subscribe(this);
+        _moduleHandler.ModuleObserver.Subscribe(this);
     }
 
     private void OnDisable()
     {
-        _moduleHandler.UnSubscribe(this);
+        _moduleHandler.ModuleObserver.Unsubscribe(this);
     }
 
     private void Start()
@@ -53,7 +55,7 @@ public class PlayerCrouching : MonoBehaviour, IModule
     {
         if (_groundChecker.GetGrounded())
         {
-            if (!IsCrouching && _crouchTimeoutDelta > 0)
+            if (!_isCrouching && _crouchTimeoutDelta > 0)
             {
                 _crouchTimeoutDelta -= Time.deltaTime;
             }
@@ -65,14 +67,17 @@ public class PlayerCrouching : MonoBehaviour, IModule
 
                 _controller.height = _crouchHeight;
                 _controller.center = Vector3.up * -_controllerOffset;
+
+                _isCrouching = true;
+
             }
             
-            if (!_input.CrouchPressed && IsCrouching)
+            if (!_input.CrouchPressed && _isCrouching)
             {
                 _controller.height = _controllerHeight;
                 _controller.center = Vector3.zero;
                 
-                IsCrouching = false;
+                _isCrouching = false;
 
             }
         }
